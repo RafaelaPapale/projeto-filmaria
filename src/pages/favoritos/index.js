@@ -10,7 +10,7 @@ export default function Favoritos() {
         setFilmes(JSON.parse(minhaLista) || []);
     }, []);
 
-    function excluirFilme(idFilme){
+    function excluirFilme(idFilme) {
         let filtroFilmes = filmes.filter((item) => {
             return (item.id !== idFilme)
         })
@@ -22,6 +22,7 @@ export default function Favoritos() {
     return (
         <div className="fav">
             <h1>Meus filmes</h1>
+            {filmes.length === 0 && <span>Você não possui nenhum filme salvo! :(</span>}
             <ul>
                 {filmes.map((item) => {
                     return (
@@ -30,7 +31,7 @@ export default function Favoritos() {
 
                             <div>
                                 <Link to={`/filme/${item.id}`}>Ver detalhes</Link>
-                                <button onClick={ () => excluirFilme(item.id) }>Excluir</button>
+                                <button onClick={() => excluirFilme(item.id)}>Excluir</button>
                             </div>
                         </li>
                     );

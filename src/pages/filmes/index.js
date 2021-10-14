@@ -39,13 +39,13 @@ export default function Filme() {
         );
     }
 
-    function salvaFilme(){
+    function salvaFilme() {
         const minhaLista = localStorage.getItem('filmes');
         let filmesSalvos = JSON.parse(minhaLista) || [];
 
         const hasFilme = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id);
 
-        if(hasFilme){
+        if (hasFilme) {
             alert('Você já possui esse filme salvo!')
             return;
         }
@@ -65,7 +65,7 @@ export default function Filme() {
             {filme.sinopse}
 
             <div className="botoes">
-                <button onClick={ salvaFilme }>Salvar</button>
+                <button onClick={salvaFilme}>Salvar</button>
                 <button>
                     <a target="blank" href={`https://www.youtube.com/results?search_query=${filme.nome}+Trailer`}>Trailer</a>
                 </button>

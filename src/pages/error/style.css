@@ -1,0 +1,17 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error h1{
+    font-size: 100px;
+}
+
+.error a{
+    color: white;
+    text-decoration: none;
+    background-color: brown;
+    padding: 10px;
+}
